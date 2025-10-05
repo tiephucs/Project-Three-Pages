@@ -1,0 +1,210 @@
+<!-- File: index.html -->
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Sunny Studio — Home</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <a class="skip-link" href="#main">Skip to main content</a>
+
+  <header class="site-header">
+    <div class="brand">
+      <h1>Sunny Studio</h1>
+      <p class="tag">Photos • Tutorials • Resources</p>
+    </div>
+    <nav class="main-nav" aria-label="Primary">
+      <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="gallery.html">Gallery</a></li>
+        <li><a href="about.html">About</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main id="main">
+    <section class="hero">
+      <h2>Welcome to Sunny Studio</h2>
+      <p>Practice CSS by building a simple, accessible site. This project demonstrates skip links, accessible navigation, grid, flex, image box-model styling, hover effects, and advanced selectors.</p>
+      <img src="images/hero.jpg" alt="Studio workspace with camera and laptop">
+    </section>
+
+    <section class="features grid-2">
+      <article>
+        <h3>Accessible Navigation</h3>
+        <p>Navigation uses semantic markup and keyboard-friendly focus states.</p>
+      </article>
+      <article>
+        <h3>Responsive Grid</h3>
+        <p>The gallery page uses CSS Grid with at least two columns on wider screens.</p>
+      </article>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <p>© <span id="year">2025</span> Sunny Studio — built for WD4E CSS assignment</p>
+  </footer>
+</body>
+</html>
+
+
+<!-- File: gallery.html -->
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Gallery — Sunny Studio</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <a class="skip-link" href="#main">Skip to main content</a>
+
+  <header class="site-header">
+    <div class="brand">
+      <h1>Sunny Studio</h1>
+    </div>
+    <nav class="main-nav" aria-label="Primary">
+      <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="gallery.html">Gallery</a></li>
+        <li><a href="about.html">About</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main id="main">
+    <h2>Photo Gallery</h2>
+    <p class="lead">At least five images are required on one page — here are six.</p>
+
+    <section class="photo-grid">
+      <img src="images/photo1.jpg" alt="Close up of a camera lens">
+      <img src="images/photo2.jpg" alt="Sunset over a lake">
+      <img src="images/photo3.jpg" alt="Top-down of workspace with coffee">
+">
+      <img src="images/photo4.jpg" alt="Mountains with morning mist">
+      <img src="images/photo5.jpg" alt="Long exposure of a city at night">
+      <img src="images/photo6.jpg" alt="Macro of flower petals">
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <p>Gallery • Sunny Studio</p>
+  </footer>
+</body>
+</html>
+
+
+<!-- File: about.html -->
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>About — Sunny Studio</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <a class="skip-link" href="#main">Skip to main content</a>
+
+  <header class="site-header">
+    <div class="brand">
+      <h1>Sunny Studio</h1>
+    </div>
+    <nav class="main-nav" aria-label="Primary">
+      <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="gallery.html">Gallery</a></li>
+        <li><a href="about.html">About</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main id="main" class="about-main">
+    <h2>About This Project</h2>
+    <p>This project was created to practice CSS layout, accessibility, and visual styling techniques taught in the course.</p>
+
+    <section class="team flex-row">
+      <img src="images/team1.jpg" alt="Portrait of team member 1">
+      <img src="images/team2.jpg" alt="Portrait of team member 2">
+      <img src="images/team3.jpg" alt="Portrait of team member 3">
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <p>Contact: <a href="mailto:hello@sunny.studio">hello@sunny.studio</a></p>
+  </footer>
+</body>
+</html>
+
+
+/* File: styles.css */
+:root{
+  --bg:#faf9f6;
+  --accent:#ffb703;
+  --muted:#6b7280;
+  --card:#ffffff;
+  --text:#111827;
+}
+*{box-sizing:border-box}
+html,body{height:100%;margin:0;font-family:system-ui,-apple-system,Segoe UI,Roboto,'Helvetica Neue',Arial}
+body{background:var(--bg);color:var(--text);line-height:1.5}
+
+/* Skip link - hidden until focused */
+.skip-link{
+  position:absolute;left:-9999px;top:auto;width:1px;height:1px;overflow:hidden;
+}
+.skip-link:focus{
+  position:static;display:block;margin:0.5rem; padding:0.5rem 1rem;background:var(--accent);color:#000;border-radius:6px;outline:3px solid #333;z-index:9999;
+}
+
+/* Header & Navigation */
+.site-header{display:flex;align-items:center;justify-content:space-between;padding:1rem;gap:1rem;background:linear-gradient(180deg,rgba(255,183,3,0.06),transparent);}
+.brand h1{margin:0;font-size:1.25rem}
+.brand .tag{margin:0;font-size:0.9rem;color:var(--muted)}
+.main-nav ul{list-style:none;margin:0;padding:0;display:flex;gap:0.5rem;align-items:center}
+.main-nav a{display:inline-block;padding:0.5rem 0.75rem;border-radius:8px;text-decoration:none;color:var(--text);transition:transform 180ms ease, box-shadow 180ms ease}
+
+/* Navigation hover and focus */
+.main-nav a:hover, .main-nav a:focus{transform:translateY(-3px);box-shadow:0 6px 18px rgba(17,24,39,0.08)}
+
+/* Hero */
+.hero{padding:1rem;display:grid;grid-template-columns:1fr 320px;gap:1rem;align-items:center}
+.hero img{max-width:100%;height:auto;border:6px solid var(--card);padding:6px;border-radius:12px;}
+
+/* Simple 2-col grid for features */
+.grid-2{display:grid;grid-template-columns:repeat(2,1fr);gap:1rem;padding:1rem}
+
+/* Photo grid -- uses CSS Grid with responsive columns */
+.photo-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:12px;padding:1rem}
+.photo-grid img{width:100%;height:auto;border:8px solid #fff;padding:6px;border-radius:12px;box-shadow:0 6px 18px rgba(17,24,39,0.06);transition:transform 240ms ease,filter 240ms ease}
+
+/* Hover effect on gallery images */
+.photo-grid img:hover{transform:scale(1.03);filter:saturate(1.1)}
+
+/* nth-child demo: give every even image a different border-radius */
+.photo-grid img:nth-child(even){border-radius:28px}
+
+/* Flex example on about page */
+.flex-row{display:flex;gap:12px;align-items:center;padding:1rem}
+.flex-row img{width:120px;height:120px;object-fit:cover;border-radius:12px;border:6px solid var(--card);padding:6px}
+
+/* Footer */
+.site-footer{padding:1rem;text-align:center;color:var(--muted);font-size:0.9rem}
+
+/* Responsive adjustments */
+@media (max-width:800px){
+  .hero{grid-template-columns:1fr}
+  .photo-grid{grid-template-columns:repeat(2,1fr)}
+  .grid-2{grid-template-columns:1fr}
+}
+
+@media (max-width:480px){
+  .main-nav ul{flex-direction:column;gap:0}
+  .photo-grid{grid-template-columns:1fr}
+}
+
+/* Small accessible focus outlines */
+a:focus{outline:3px solid #ffe8a3;outline-offset:3px}
